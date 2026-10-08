@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101728">
+  <meta name="description" content="A quick, friendly game for learning what the parts inside a computer do.">
+  <title>Inside the Machine — Hardware Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Inside the Machine home">
+        <span class="brand-mark" aria-hidden="true">⌘</span>
+        <span>FIELD NOTES <span class="brand-divider">/</span> COMPUTER SCIENCE</span>
+      </a>
+      <details class="page-menu">
+        <summary><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span> MENU <span class="menu-chevron" aria-hidden="true">⌄</span></summary>
+        <nav class="menu-links" aria-label="Main navigation">
+          <a class="active" href="index.html" aria-current="page"><span><strong>Hardware Quiz</strong><small>Multiple-choice challenge</small></span><em>01</em></a>
+          <a href="match.html"><span><strong>Match Lab</strong><small>Drag-and-drop components</small></span><em>02</em></a>
+          <a href="analogy.html"><span><strong>Body Analogy</strong><small>Hardware meets human biology</small></span><em>03</em></a>
+          <a href="components.html"><span><strong>Component Guide</strong><small>Graphics and definitions</small></span><em>04</em></a>
+        </nav>
+      </details>
+      <div class="topbar-note"><span class="live-dot"></span> HARDWARE LAB <span class="topbar-year">· 01</span></div>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> YOUR FIRST SYSTEM CHECK</p>
+          <h1 id="page-title">Inside the <span>machine.</span></h1>
+          <p class="intro-text">A computer is a team, not a single part. Meet the hardware, learn each job, and see if you can get the whole system running.</p>
+          <div class="intro-meta"><span>01—10</span><span class="meta-rule"></span><span>10 QUICK CHALLENGES</span></div>
+        </div>
+        <div class="machine-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="chip"><span class="chip-label">CPU</span><span class="chip-core">✳</span><span class="chip-caption">SYSTEM CORE</span></div>
+          <span class="circuit circuit-a"></span><span class="circuit circuit-b"></span>
+          <span class="art-node node-a">RAM</span><span class="art-node node-b">SSD</span>
+          <span class="art-coordinate">40.7128° N<br>74.0060° W</span>
+        </div>
+      </section>
+
+      <section class="game-layout" aria-label="Hardware quiz game">
+        <aside class="side-panel">
+          <div class="panel-heading"><span class="panel-index">A</span><h2>MISSION STATUS</h2></div>
+          <div class="progress-block">
+            <div class="progress-label"><span>PROGRESS</span><span id="progress-text">01 <span class="muted">/ 10</span></span></div>
+            <div class="progress-track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
+          </div>
+          <div class="score-card"><span class="score-label">YOUR SCORE</span><div class="score-value"><span id="score">00</span><span class="score-unit">PTS</span></div><p>Every correct answer earns 100 points.</p></div>
+          <div class="streak-row"><span class="streak-icon" aria-hidden="true">↗</span><span>BEST STREAK</span><strong id="streak">0</strong></div>
+          <div class="side-tip"><span class="tip-icon" aria-hidden="true">✳</span><div><strong>FIELD TIP</strong><p>Think about how information moves through a computer: input, processing, storage, and output.</p></div></div>
+          <button class="reset-button" id="reset-button" type="button"><span aria-hidden="true">↻</span> START OVER</button>
+        </aside>
+
+        <section class="quiz-panel" aria-live="polite" aria-atomic="false">
+          <div class="quiz-topline"><span class="question-type"><span class="type-dot"></span> COMPONENT ID</span><span class="question-number" id="question-number">QUESTION 01 <span>/ 10</span></span></div>
+          <div class="question-area">
+            <div class="component-icon" id="component-icon" aria-hidden="true">🧠</div>
+            <p class="question-kicker" id="question-kicker">PROCESSING</p>
+            <h2 id="question-text">Loading your first challenge…</h2>
+            <p class="question-hint" id="question-hint">Choose the component that best fits the job.</p>
+          </div>
+          <div class="answer-list" id="answer-list" role="group" aria-label="Answer choices"></div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite" hidden>
+            <div class="feedback-icon" id="feedback-icon" aria-hidden="true"></div>
+            <div class="feedback-copy"><strong id="feedback-title"></strong><p id="feedback-text"></p></div>
+            <button class="next-button" id="next-button" type="button">NEXT <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="quiz-footer"><span><span class="key-hint">TIP</span> Take your time—learning the why is the win.</span><span class="footer-code">SYS.CHECK_01</span></div>
+        </section>
+      </section>
+
+      <footer class="page-footer"><span>BUILT FOR CURIOUS MINDS.</span><span>NO PARTS REQUIRED <span class="footer-spark">✳</span></span></footer>
+    </main>
+  </div>
+</body>
+</html>
