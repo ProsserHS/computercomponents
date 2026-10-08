@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101728">
+  <meta name="description" content="Match computer hardware components to their functions in this drag-and-drop learning game.">
+  <title>Hardware Match Lab — Inside the Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="match.css">
+  <script src="match.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Inside the Machine home">
+        <span class="brand-mark" aria-hidden="true">⌘</span>
+        <span>FIELD NOTES <span class="brand-divider">/</span> COMPUTER SCIENCE</span>
+      </a>
+      <details class="page-menu">
+        <summary><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span> MENU <span class="menu-chevron" aria-hidden="true">⌄</span></summary>
+        <nav class="menu-links" aria-label="Main navigation">
+          <a href="index.html"><span><strong>Hardware Quiz</strong><small>Multiple-choice challenge</small></span><em>01</em></a>
+          <a class="active" href="match.html" aria-current="page"><span><strong>Match Lab</strong><small>Drag-and-drop components</small></span><em>02</em></a>
+          <a href="analogy.html"><span><strong>Body Analogy</strong><small>Hardware meets human biology</small></span><em>03</em></a>
+          <a href="components.html"><span><strong>Component Guide</strong><small>Graphics and definitions</small></span><em>04</em></a>
+        </nav>
+      </details>
+      <div class="topbar-note"><span class="live-dot"></span> HARDWARE LAB <span class="topbar-year">· 02</span></div>
+    </header>
+
+    <main>
+      <section class="match-hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> HANDS-ON SYSTEMS THINKING</p>
+          <h1 id="page-title">Match the part.<br><span>Know its purpose.</span></h1>
+          <p class="intro-text">Drag each piece of hardware onto the job it does. On a touchscreen or keyboard? Select a part, then select its matching mission.</p>
+        </div>
+        <div class="match-summary" aria-live="polite">
+          <span class="summary-label">COMPONENTS PLACED</span>
+          <strong><span id="placed-count">00</span><span class="summary-total"> / 06</span></strong>
+          <div class="summary-track"><span id="placed-progress"></span></div>
+          <span class="summary-caption" id="summary-caption">All parts are waiting for a job.</span>
+        </div>
+      </section>
+
+      <section class="match-instructions" aria-label="How to play">
+        <span class="instruction-number">01</span>
+        <p>Choose a component card, then drop it on the description that matches its job.</p>
+        <span class="instruction-hint"><span class="live-dot"></span> 6 COMPONENTS · NO TIMER</span>
+      </section>
+
+      <section class="match-board" aria-label="Hardware component matching game">
+        <div class="component-column">
+          <div class="board-heading"><div><span class="board-index">A / PARTS BIN</span><h2>Meet the hardware</h2></div><span class="bin-count" id="bin-count">06 LEFT</span></div>
+          <div class="component-bin" id="component-bin" aria-label="Draggable hardware parts">
+            <button class="part-card" type="button" draggable="true" data-component="cpu" aria-pressed="false" aria-label="CPU, central processing unit. Select or drag this component.">
+              <span class="part-art"><img src="assets/cpu.svg" alt="Illustration of a square processor chip"></span>
+              <span class="part-info"><strong>CPU</strong><small>CENTRAL PROCESSOR</small></span><span class="part-grip" aria-hidden="true">⠿</span>
+            </button>
+            <button class="part-card" type="button" draggable="true" data-component="ram" aria-pressed="false" aria-label="RAM, random-access memory. Select or drag this component.">
+              <span class="part-art"><img src="assets/ram.svg" alt="Illustration of a memory module"></span>
+              <span class="part-info"><strong>RAM</strong><small>MEMORY MODULE</small></span><span class="part-grip" aria-hidden="true">⠿</span>
+            </button>
+            <button class="part-card" type="button" draggable="true" data-component="ssd" aria-pressed="false" aria-label="SSD, solid-state drive. Select or drag this component.">
+              <span class="part-art"><img src="assets/ssd.svg" alt="Illustration of a solid-state drive"></span>
+              <span class="part-info"><strong>SSD</strong><small>SOLID-STATE DRIVE</small></span><span class="part-grip" aria-hidden="true">⠿</span>
+            </button>
+            <button class="part-card" type="button" draggable="true" data-component="gpu" aria-pressed="false" aria-label="GPU, graphics processing unit. Select or drag this component.">
+              <span class="part-art"><img src="assets/gpu.svg" alt="Illustration of a graphics card"></span>
+              <span class="part-info"><strong>GPU</strong><small>GRAPHICS CARD</small></span><span class="part-grip" aria-hidden="true">⠿</span>
+            </button>
+            <button class="part-card" type="button" draggable="true" data-component="psu" aria-pressed="false" aria-label="PSU, power supply unit. Select or drag this component.">
+              <span class="part-art"><img src="assets/psu.svg" alt="Illustration of a computer power supply"></span>
+              <span class="part-info"><strong>PSU</strong><small>POWER SUPPLY</small></span><span class="part-grip" aria-hidden="true">⠿</span>
+            </button>
+            <button class="part-card" type="button" draggable="true" data-component="motherboard" aria-pressed="false" aria-label="Motherboard. Select or drag this component.">
+              <span class="part-art"><img src="assets/motherboard.svg" alt="Illustration of a computer motherboard"></span>
+              <span class="part-info"><strong>MOTHERBOARD</strong><small>MAIN CIRCUIT BOARD</small></span><span class="part-grip" aria-hidden="true">⠿</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mission-column">
+          <div class="board-heading"><div><span class="board-index">B / SYSTEM MISSIONS</span><h2>What does it do?</h2></div><button class="reset-lab" id="reset-lab" type="button"><span aria-hidden="true">↻</span> RESET</button></div>
+          <div class="mission-list" id="mission-list">
+            <div class="mission-slot" data-answer="cpu" tabindex="0" role="button" aria-label="Mission: Executes program instructions and calculations. Drop or select the matching component here.">
+              <span class="slot-number">01</span><span class="slot-copy"><strong>Executes program instructions and calculations.</strong><small>THE COMPUTER'S INSTRUCTION RUNNER</small></span><span class="drop-target" aria-hidden="true">DROP HERE <span>＋</span></span>
+            </div>
+            <div class="mission-slot" data-answer="ram" tabindex="0" role="button" aria-label="Mission: Temporarily holds data active programs need quick access to. Drop or select the matching component here.">
+              <span class="slot-number">02</span><span class="slot-copy"><strong>Temporarily holds data active programs need quick access to.</strong><small>FAST, SHORT-TERM WORKING SPACE</small></span><span class="drop-target" aria-hidden="true">DROP HERE <span>＋</span></span>
+            </div>
+            <div class="mission-slot" data-answer="ssd" tabindex="0" role="button" aria-label="Mission: Keeps files and apps saved, even when the computer is off. Drop or select the matching component here.">
+              <span class="slot-number">03</span><span class="slot-copy"><strong>Keeps files and apps saved, even when the computer is off.</strong><small>NONVOLATILE LONG-TERM STORAGE</small></span><span class="drop-target" aria-hidden="true">DROP HERE <span>＋</span></span>
+            </div>
+            <div class="mission-slot" data-answer="gpu" tabindex="0" role="button" aria-label="Mission: Renders images, video, and 3D graphics. Drop or select the matching component here.">
+              <span class="slot-number">04</span><span class="slot-copy"><strong>Renders images, video, and 3D graphics.</strong><small>PARALLEL GRAPHICS PROCESSING</small></span><span class="drop-target" aria-hidden="true">DROP HERE <span>＋</span></span>
+            </div>
+            <div class="mission-slot" data-answer="psu" tabindex="0" role="button" aria-label="Mission: Converts wall-outlet electricity into regulated power for components. Drop or select the matching component here.">
+              <span class="slot-number">05</span><span class="slot-copy"><strong>Converts wall-outlet electricity into regulated power for components.</strong><small>THE SYSTEM'S POWER CONVERTER</small></span><span class="drop-target" aria-hidden="true">DROP HERE <span>＋</span></span>
+            </div>
+            <div class="mission-slot" data-answer="motherboard" tabindex="0" role="button" aria-label="Mission: Connects components so they can communicate with each other. Drop or select the matching component here.">
+              <span class="slot-number">06</span><span class="slot-copy"><strong>Connects components so they can communicate with each other.</strong><small>THE SYSTEM'S MAIN CIRCUIT BOARD</small></span><span class="drop-target" aria-hidden="true">DROP HERE <span>＋</span></span>
+            </div>
+          </div>
+          <p class="match-feedback" id="match-feedback" role="status" aria-live="polite">Select a hardware card to get started.</p>
+        </div>
+      </section>
+
+      <section class="match-finish" id="match-finish" hidden aria-live="polite">
+        <span class="finish-icon" aria-hidden="true">✳</span><div><strong>All systems matched.</strong><p>You connected every component to its function. Ready for another round?</p></div><button class="next-button" id="play-again" type="button">PLAY AGAIN <span aria-hidden="true">↻</span></button>
+      </section>
+
+      <footer class="page-footer"><span>BUILT FOR CURIOUS MINDS.</span><span>LEARN BY CONNECTING <span class="footer-spark">✳</span></span></footer>
+    </main>
+  </div>
+</body>
+</html>
